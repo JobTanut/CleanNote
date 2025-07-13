@@ -2,9 +2,12 @@ import Head from 'next/head';
 import Header from "../components/header";
 import Link from 'next/link';
 
+// ...
+
 <Link href="/summarize/">
-  <span>Summarize</span>
+  <a>Go to Summarize</a>
 </Link>
+
 
 export default function Home() {
   return (
@@ -22,12 +25,12 @@ export default function Home() {
         <p className="text-lg text-gray-600 max-w-xl mb-8">
           Turn messy notes into clear, usable content — summaries, blogs, newsletters & more.
         </p>
-        <a
+        <link
           href="/summarize"
           className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium shadow hover:bg-blue-700 hover:scale-105 transition"
         >
           Try it Free
-        </a>
+        </link>
       </main>
     </>
   );
