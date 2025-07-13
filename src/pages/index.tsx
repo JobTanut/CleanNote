@@ -1,5 +1,10 @@
 import Head from 'next/head';
 import Header from "../components/header";
+import Link from 'next/link';
+
+<Link href="/summarize/">
+  <span>Summarize</span>
+</Link>
 
 export default function Home() {
   return (

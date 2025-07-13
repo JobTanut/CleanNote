@@ -37,7 +37,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         model: 'deepseek/deepseek-r1-0528', // use your working model ID
         messages: [
           { role: 'system', content: systemPrompt },
-          { role: 'user', content: input },
+          { role: 'user', content: removeBoldMarkdown(input) },
         ],
         max_tokens: 1000,
       }),

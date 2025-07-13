@@ -20,30 +20,31 @@ export default function SummarizePage() {
   }
 
   async function handleSummarize() {
-    setLoading(true);
-    setError(null);
-    setSummary(null);
+  setLoading(true);
+  setError(null);
+  setSummary(null);
 
-    try {
-      const res = await fetch('/api/summarize', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ input, style }),
-      });
+  try {
+    const res = await fetch('/api/summarize', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ input, style, useBold }),
+    });
 
-      const data = await res.json();
+    const data = await res.json();
 
-      if (!res.ok) {
-        setError(data.error || 'Failed to summarize');
-      } else {
-        setSummary(formatSummary(data.summary, useBold));
-      }
-    } catch (e) {
-      setError('Network error');
+    if (!res.ok) {
+      setError(data.error || 'Failed to summarize');
+    } else {
+      setSummary(formatSummary(data.summary, useBold));
     }
-
-    setLoading(false);
+  } catch (e) {
+    setError('Network error');
   }
+
+  setLoading(false);
+}
+
 
   return (
     
