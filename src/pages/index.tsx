@@ -2,12 +2,7 @@ import Head from 'next/head';
 import Header from "../components/header";
 import Link from 'next/link';
 
-// ...
-
-<Link href="/summarize/">
-  <a>Go to Summarize</a>
-</Link>
-
+<Link href="/summarize/">Summarize</Link>
 
 export default function Home() {
   return (
